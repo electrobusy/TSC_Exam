@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ETHIOPIAN Module &#8212; TSC Exam 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to Inverse method - Aerodynamic coefficients’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-ethiopian">
+<span id="ethiopian-module"></span><h1>ETHIOPIAN Module<a class="headerlink" href="#module-ethiopian" title="Permalink to this headline">¶</a></h1>
+<p>Created on Tue Apr 13 21:10:10 2021</p>
+<p>&#64;author: Rohan</p>
+<div class="line-block">
+<div class="line">– Inverse method implementation</div>
+<div class="line">Example: Dynamical problem (piece of debris):
+- drag / lift / moment coef. –&gt; assumption that coef. are constant
+- no body forces (i.e., gravity)
+- uncertainty quantification (bootstrapping) &lt;– THIS (1rst DDFM and IMT lectures)</div>
+<div class="line">– </div>
+<div class="line">Version 0.2</div>
+<div class="line">Notes: -</div>
+<div class="line">Issues: - </div>
+</div>
+<dl class="py function">
+<dt id="ethiopian.cost">
+<code class="sig-prename descclassname">ethiopian.</code><code class="sig-name descname">cost</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">t</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">u</span></em>, <em class="sig-param"><span class="n">param</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ethiopian.html#cost"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ethiopian.cost" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cost function</p>
+<dl class="simple">
+<dt><strong>inputs:</strong></dt><dd><ul class="simple">
+<li><p><em>X</em>: parameters to be estimated</p></li>
+<li><p><em>t</em>: time</p></li>
+<li><p><em>y</em>: original response</p></li>
+<li><p><em>u</em>: control inputs</p></li>
+<li><p><em>param</em>: model parameters</p></li>
+</ul>
+</dd>
+<dt><strong>outputs:</strong> </dt><dd><ul class="simple">
+<li><p><em>x</em>: state path</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="ethiopian.forward">
+<code class="sig-prename descclassname">ethiopian.</code><code class="sig-name descname">forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em>, <em class="sig-param"><span class="n">s</span></em>, <em class="sig-param"><span class="n">u</span></em>, <em class="sig-param"><span class="n">param</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ethiopian.html#forward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ethiopian.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulated dynamics of a space debris model</p>
+<dl class="simple">
+<dt><strong>inputs:</strong></dt><dd><ul class="simple">
+<li><p><em>t</em>: time</p></li>
+<li><p><em>s</em>: state</p></li>
+<li><p><em>u</em>: control inputs</p></li>
+<li><p><em>param</em>: model parameters</p></li>
+</ul>
+</dd>
+<dt><strong>outputs:</strong> </dt><dd><ul class="simple">
+<li><p><em>ds</em>: derivative of the final state</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="ethiopian.propagate_traj">
+<code class="sig-prename descclassname">ethiopian.</code><code class="sig-name descname">propagate_traj</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em>, <em class="sig-param"><span class="n">x0</span></em>, <em class="sig-param"><span class="n">u</span></em>, <em class="sig-param"><span class="n">param</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ethiopian.html#propagate_traj"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ethiopian.propagate_traj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Propagate trajectory</p>
+<dl class="simple">
+<dt><strong>inputs:</strong></dt><dd><ul class="simple">
+<li><p><em>t</em>: time</p></li>
+<li><p><em>x0</em>: initial state</p></li>
+<li><p><em>u</em>: control inputs</p></li>
+<li><p><em>param</em>: model parameters</p></li>
+</ul>
+</dd>
+<dt><strong>outputs:</strong> </dt><dd><ul class="simple">
+<li><p><em>x</em>: state path</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">TSC Exam</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ETHIOPIAN Module</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to Inverse method - Aerodynamic coefficients’s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Rohan Chotalal.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/code.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
