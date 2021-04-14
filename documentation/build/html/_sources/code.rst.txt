@@ -1,5 +1,5 @@
-ETHIOPIAN Module	
+FOREFRONT Module	
 ================  
 
-.. automodule:: ethiopian 
+.. automodule:: forefront 
    :members:

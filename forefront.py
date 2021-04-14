@@ -3,16 +3,6 @@
 Created on Tue Apr 13 21:10:10 2021
 
 @author: Rohan
-
-| -- Inverse method implementation
-| Example: Dynamical problem (piece of debris):
-            - drag / lift / moment coef. --> assumption that coef. are constant
-            - no body forces (i.e., gravity)
-            - uncertainty quantification (bootstrapping) <-- THIS (1rst DDFM and IMT lectures)
-| -- 
-| Version 0.2
-| Notes: -
-| Issues: Missing parallel processing 
 """
 
 import numpy as np 
@@ -65,7 +55,7 @@ def forward(t,s,u,param):
 
 def propagate_traj(t,x0,u,param):
     """ 
-    Propagate trajectory 
+    Propagate trajectory of dynamical model via numerical integration
     
     **inputs:**
         - *t*: time
@@ -100,7 +90,8 @@ def propagate_traj(t,x0,u,param):
 
 def cost(X,t,y,u,param):
     """ 
-    Cost function
+    Cost function used in the inverse method: 
+        L2-norm of the trajectory error
     
     **inputs:**
         - *X*: parameters to be estimated

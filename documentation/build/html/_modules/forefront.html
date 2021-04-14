@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ethiopian &#8212; TSC Exam 1.0 documentation</title>
+    <title>forefront &#8212; TSC Exam 1.0 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -31,22 +31,12 @@
 
           <div class="body" role="main">
             
-  <h1>Source code for ethiopian</h1><div class="highlight"><pre>
+  <h1>Source code for forefront</h1><div class="highlight"><pre>
 <span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Created on Tue Apr 13 21:10:10 2021</span>
 
 <span class="sd">@author: Rohan</span>
-
-<span class="sd">| -- Inverse method implementation</span>
-<span class="sd">| Example: Dynamical problem (piece of debris):</span>
-<span class="sd">            - drag / lift / moment coef. --&gt; assumption that coef. are constant</span>
-<span class="sd">            - no body forces (i.e., gravity)</span>
-<span class="sd">            - uncertainty quantification (bootstrapping) &lt;-- THIS (1rst DDFM and IMT lectures)</span>
-<span class="sd">| -- </span>
-<span class="sd">| Version 0.2</span>
-<span class="sd">| Notes: -</span>
-<span class="sd">| Issues: Missing parallel processing </span>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
@@ -60,7 +50,7 @@
 
 <span class="c1">#%% Functions</span>
 
-<div class="viewcode-block" id="forward"><a class="viewcode-back" href="../code.html#ethiopian.forward">[docs]</a><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
+<div class="viewcode-block" id="forward"><a class="viewcode-back" href="../code.html#forefront.forward">[docs]</a><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; </span>
 <span class="sd">    Simulated dynamics of a space debris model</span>
 <span class="sd">    </span>
@@ -97,7 +87,7 @@
     
     <span class="k">return</span> <span class="n">ds</span></div>
 
-<div class="viewcode-block" id="propagate_traj"><a class="viewcode-back" href="../code.html#ethiopian.propagate_traj">[docs]</a><span class="k">def</span> <span class="nf">propagate_traj</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
+<div class="viewcode-block" id="propagate_traj"><a class="viewcode-back" href="../code.html#forefront.propagate_traj">[docs]</a><span class="k">def</span> <span class="nf">propagate_traj</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; </span>
 <span class="sd">    Propagate trajectory </span>
 <span class="sd">    </span>
@@ -132,7 +122,7 @@
     
     <span class="k">return</span> <span class="n">x</span> </div>
 
-<div class="viewcode-block" id="cost"><a class="viewcode-back" href="../code.html#ethiopian.cost">[docs]</a><span class="k">def</span> <span class="nf">cost</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
+<div class="viewcode-block" id="cost"><a class="viewcode-back" href="../code.html#forefront.cost">[docs]</a><span class="k">def</span> <span class="nf">cost</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; </span>
 <span class="sd">    Cost function</span>
 <span class="sd">    </span>
@@ -445,7 +435,7 @@
 
 <h3>Navigation</h3>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../code.html">ETHIOPIAN Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code.html">FOREFRONT Module</a></li>
 </ul>
 
 <div class="relations">
