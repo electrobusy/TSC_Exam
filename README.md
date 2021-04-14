@@ -26,7 +26,7 @@ To run the code, the following packages are required:
 	scipy
 	sklearn
 
-Detailed documentation is provided [here](/documentation/build\html)
+Detailed documentation is provided [here](documentation/build/html)
 
 
 	
