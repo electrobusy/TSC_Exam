@@ -12,7 +12,7 @@ Created on Tue Apr 13 21:10:10 2021
 | -- 
 | Version 0.2
 | Notes: -
-| Issues: - 
+| Issues: Missing parallel processing 
 """
 
 import numpy as np 
